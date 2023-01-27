@@ -1,3 +1,4 @@
+// Positioning the map in the beginnign
 var map = L.map('map').setView([37.97, 23.73], 16); 
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -6,13 +7,17 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
-// to do - call the function based on the btn id
-// case 1: id syntagma --> go to syntagma
-// case 2: id overview --> go to overview
+const btn_syntagma = document.getElementById("syntagma");
+const btn_overview = document.getElementById("overview");
 
-function goto() {
+// Event listeners for the buttons
+btn_syntagma.addEventListener("click", function() {
     map.setView([37.975549176902845, 23.734859823506152], 20)
-}
+});
+
+btn_overview.addEventListener("click", function() {
+    map.setView([37.97, 23.73], 16)
+});
 
 
 
